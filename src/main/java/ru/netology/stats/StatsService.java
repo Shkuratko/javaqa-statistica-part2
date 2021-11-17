@@ -10,7 +10,7 @@ public class StatsService {
     }
 
     public int calculateAverageSales(int[] sales) {
-        return calculateSum(sales)/ sales.length;
+        return calculateSum(sales) / sales.length;
     }
 
     public int calculateNumberMonthMaxSales(int[] sales) {
@@ -38,24 +38,27 @@ public class StatsService {
     }
 
     public int calculateNumberMonthLessAverageSales(int[] sales) {
+        int average = calculateAverageSales(sales);
         int counter = 0;
-        for (int i = 0; i < sales.length; i++) {
-            if (calculateAverageSales(sales) > sales[i]) {
-                counter++;
+        for (int sale : sales) {
+            if (sale > average) {
+                sale = 1;
+                counter += sale;
             }
         }
         return counter;
     }
 
     public int calculateNumberMonthOverAverageSales(int[] sales) {
+        int average = calculateAverageSales(sales);
         int counter = 0;
-        for (int i = 0; i < sales.length; i++) {
-            if (calculateAverageSales(sales) < sales[i]) {
-                counter++;
+        for (int sale : sales) {
+            if (sale > average) {
+                sale = 1;
+                counter += sale;
             }
         }
         return counter;
+
     }
-
-
 }

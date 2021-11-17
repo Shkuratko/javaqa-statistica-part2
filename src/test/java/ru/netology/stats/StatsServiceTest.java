@@ -60,5 +60,4 @@ class StatsServiceTest {
         int actual = service.calculateNumberMonthOverAverageSales(sales);
         assertEquals(expected, actual);
     }
-
 }
